@@ -8,10 +8,10 @@
   hosts: localhost
   gather_facts: False
   tasks:
-    - include: ../../deimosfr.coreos-ansible/tasks/ansible_prerequisites.yml
+    - include: ../../lu.coreos-ansible/tasks/ansible_prerequisites.yml
   vars:
     ansible_python_interpreter: "/usr/bin/python"
-    coreos_ansible_role_path: "{{playbook_dir}}/../../deimosfr.coreos-ansible"
+    coreos_ansible_role_path: "{{playbook_dir}}/../../lu.coreos-ansible"
 
 - name: coreos-ansible
   hosts: k8s-nodes
@@ -19,9 +19,9 @@
   become: yes
   gather_facts: False
   roles:
-    - deimosfr.coreos-ansible
+    - lu.coreos-ansible
   vars:
-    coreos_ansible_role_path: "{{playbook_dir}}/../../deimosfr.coreos-ansible"
+    coreos_ansible_role_path: "{{playbook_dir}}/../../lu.coreos-ansible"
 
 #######################
 # K8S SSL CERTIFICATS #

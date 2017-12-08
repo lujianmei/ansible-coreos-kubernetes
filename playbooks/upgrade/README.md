@@ -6,5 +6,5 @@ https://coreos.com/kubernetes/docs/latest/kubernetes-upgrade.html
 Just run the Ansible playbook:
 
 ```
-ansible-playbook -i hosts roles/deimosfr.coreos-kubernetes/playbooks/upgrade/upgrade.yml -D
+ansible-playbook -i hosts roles/lu.coreos-kubernetes/playbooks/upgrade/upgrade.yml -D
 ```

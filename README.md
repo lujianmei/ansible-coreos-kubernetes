@@ -1,4 +1,4 @@
-[![Kubernetes version](https://img.shields.io/badge/kubernetes-1.7.2-brightgreen.svg)](https://github.com/deimosfr/ansible-coreos-kubernetes)
+[![Kubernetes version](https://img.shields.io/badge/kubernetes-1.7.2-brightgreen.svg)](https://github.com/lu/ansible-coreos-kubernetes)
 
 Ansible Kubernetes Role for CoreOS Container Linux
 ==================================================
@@ -20,8 +20,8 @@ Requirements
 This role require Python to work because it's not present in CoreOS by default.
 
 You can use those roles to install Python and make CoreOS installation (not mandatory but strongly recommanded):
-* [deimosfr.coreos-ansible](https://github.com/deimosfr/ansible-coreos-ansible)
-* [deimosfr.coreos-container-linux](https://github.com/deimosfr/ansible-coreos-container-linux)
+* [lu.coreos-ansible](https://github.com/lu/ansible-coreos-ansible)
+* [lu.coreos-container-linux](https://github.com/lu/ansible-coreos-container-linux)
 
 You'll also need python libraries:
 * dnspython
@@ -71,10 +71,10 @@ Then you need to have a playbook to deploy Kubernetes like this one (adapt paths
   hosts: localhost
   gather_facts: False
   tasks:
-    - include: ../../deimosfr.coreos-ansible/tasks/ansible_prerequisites.yml
+    - include: ../../lu.coreos-ansible/tasks/ansible_prerequisites.yml
   vars:
     ansible_python_interpreter: "/usr/bin/python"
-    coreos_ansible_role_path: "{{playbook_dir}}/../../deimosfr.coreos-ansible"
+    coreos_ansible_role_path: "{{playbook_dir}}/../../lu.coreos-ansible"
 
 - name: coreos-ansible
   hosts: k8s-nodes
@@ -82,9 +82,9 @@ Then you need to have a playbook to deploy Kubernetes like this one (adapt paths
   become: yes
   gather_facts: False
   roles:
-    - deimosfr.coreos-ansible
+    - lu.coreos-ansible
   vars:
-    coreos_ansible_role_path: "{{playbook_dir}}/../../deimosfr.coreos-ansible"
+    coreos_ansible_role_path: "{{playbook_dir}}/../../lu.coreos-ansible"
 
 #######################
 # K8S SSL CERTIFICATS #
@@ -191,4 +191,4 @@ GPLv3
 Author Information
 ------------------
 
-Pierre Mavro / deimosfr
+Pierre Mavro / lu
